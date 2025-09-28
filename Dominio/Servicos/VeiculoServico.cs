@@ -26,14 +26,9 @@ public class VeiculoServico : IVeiculoServico
       _contexto.SaveChanges();
    }
 
-   public Entidades.Veiculo? BuscaPorId(int id)
+   public Veiculo? BuscaPorId(int id)
    {
       return _contexto.Veiculos.Where(v => v.Id == id).FirstOrDefault();
-   }
-
-   public Veiculo? BuscaPorId(object id)
-   {
-      throw new NotImplementedException();
    }
 
    public void Incluir(Veiculo veiculo)
