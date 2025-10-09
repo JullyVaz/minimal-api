@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {}
+    "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {}
   },
   "projects": {
-    "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {
+    "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
+        "projectUniqueName": "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
         "projectName": "minimal-api",
-        "projectPath": "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
+        "projectPath": "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos -25\\minimal-api\\Api\\obj\\",
+        "outputPath": "C:\\Projetos -25\\minimal-api\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

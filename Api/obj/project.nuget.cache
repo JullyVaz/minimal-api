@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fu9BAN4I2tI=",
+  "dgSpecHash": "Xm+MSvM2CC0=",
   "success": true,
-  "projectFilePath": "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
+  "projectFilePath": "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",

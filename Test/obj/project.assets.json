@@ -6547,8 +6547,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {
-              "projectPath": "c:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj"
+            "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj": {
+              "projectPath": "C:\\Projetos -25\\minimal-api\\Api\\minimal-api.csproj"
             }
           }
         }

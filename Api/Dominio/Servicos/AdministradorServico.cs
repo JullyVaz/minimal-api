@@ -39,6 +39,7 @@ public class AdministradorServico : IAdministradorServico
     /// Retorna todos os administradores com opção de paginação.
     /// Remove a senha antes de devolver os dados.
     /// </summary>
+
     public List<Administrador> Todos(int? pagina = null)
     {
         var query = _contexto.Administradores.AsQueryable();
@@ -61,12 +62,3 @@ public class AdministradorServico : IAdministradorServico
 
 
 
-// var query = _contexto.Administradores.AsQueryable();
-
-// int itensPorPagina = 10;
-
-// if (pagina != null)
-// {
-//     query = query.Skip(((int)pagina - 1) * itensPorPagina).Take(itensPorPagina);
-// }
-// return query.ToList();

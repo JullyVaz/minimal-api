@@ -25,18 +25,28 @@ public class AdministradorServicoTest
         return new DbContexto(configuration);
     }
 
+    private void LimparTabelaAdministradores(DbContexto context)
+    {
+        // Desativa temporariamente foreign keys, limpa a tabela e reseta AUTO_INCREMENT
+        context.Database.ExecuteSqlRaw("SET FOREIGN_KEY_CHECKS = 0;");
+        context.Database.ExecuteSqlRaw("TRUNCATE TABLE Administradores;");
+        context.Database.ExecuteSqlRaw("ALTER TABLE Administradores AUTO_INCREMENT = 1;");
+        context.Database.ExecuteSqlRaw("SET FOREIGN_KEY_CHECKS = 1;");
+    }
 
     [TestMethod]
     public void TestandoSalvarAdministrador()
     {
         // Arrange
         var context = CriarContextoDeTeste();
-        context.Database.ExecuteSqlRaw("TRUNCATE TABLE Administradores");
+        LimparTabelaAdministradores(context);
 
-        var adm = new Administrador();
-        adm.Email = "teste@teste.com";
-        adm.Senha = "teste";
-        adm.Perfil = "Adm";
+        var adm = new Administrador
+        {
+            Email = "teste@teste.com",
+            Senha = "teste",
+            Perfil = "Adm"
+        };
 
         var administradorServico = new AdministradorServico(context);
 
@@ -44,7 +54,9 @@ public class AdministradorServicoTest
         administradorServico.Incluir(adm);
 
         // Assert
-        Assert.AreEqual(1, administradorServico.Todos(1).Count());
+        var todos = administradorServico.Todos(1); // Ajuste caso o método Todos aceite outro parâmetro
+        Assert.AreEqual(1, todos.Count(), "O número de administradores salvos deve ser 1.");
+        Assert.AreEqual(adm.Id, todos.First().Id, "O ID do administrador salvo deve ser igual ao do objeto criado.");
     }
 
     [TestMethod]
@@ -52,12 +64,14 @@ public class AdministradorServicoTest
     {
         // Arrange
         var context = CriarContextoDeTeste();
-        context.Database.ExecuteSqlRaw("TRUNCATE TABLE Administradores");
+        LimparTabelaAdministradores(context);
 
-        var adm = new Administrador();
-        adm.Email = "teste@teste.com";
-        adm.Senha = "teste";
-        adm.Perfil = "Adm";
+        var adm = new Administrador
+        {
+            Email = "teste@teste.com",
+            Senha = "teste",
+            Perfil = "Adm"
+        };
 
         var administradorServico = new AdministradorServico(context);
 
@@ -66,6 +80,8 @@ public class AdministradorServicoTest
         var admDoBanco = administradorServico.BuscaPorId(adm.Id);
 
         // Assert
-        Assert.AreEqual(1, admDoBanco?.Id);
+        Assert.IsNotNull(admDoBanco, "O administrador buscado não deve ser nulo.");
+        Assert.AreEqual(adm.Id, admDoBanco.Id, "O ID do administrador buscado deve ser igual ao do objeto criado.");
+        Assert.AreEqual(adm.Email, admDoBanco.Email, "O email do administrador buscado deve ser igual ao do objeto criado.");
     }
 }
